@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تم التحقق بنجاح</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Cairo Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Cairo', Arial, sans-serif;
+      background: linear-gradient(135deg, #43cea2 0%, #43e97b 50%, #185a9d 100%);
+      min-height: 100vh;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      animation: overlayFadeIn 1s;
+      transition: background 0.4s;
+    }
+    @keyframes overlayFadeIn {
+      from { background: rgba(0,0,0,0); }
+      to   { background: rgba(0,0,0,0.3); }
+    }
+    .popup-modal {
+      background: #fff;
+      border-radius: 26px;
+      box-shadow: 0 8px 36px 0 rgba(67, 206, 162, 0.25), 0 0 40px 6px #43cea288;
+      text-align: center;
+      padding: 44px 36px 38px 36px;
+      max-width: 370px;
+      width: 88vw;
+      position: relative;
+      animation: popIn 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity, box-shadow;
+    }
+    @keyframes popIn {
+      0% {
+        transform: scale(0.7) translateY(80px) rotate(-3deg);
+        opacity: 0;
+        box-shadow: 0 0 0 0 #43cea200;
+      }
+      60% {
+        transform: scale(1.04) translateY(-8px) rotate(2deg);
+        opacity: 1;
+        box-shadow: 0 12px 48px 0 #43cea255, 0 0 80px 12px #43cea275;
+      }
+      80% {
+        transform: scale(0.98) translateY(6px) rotate(-1deg);
+        box-shadow: 0 8px 36px 0 #43cea244, 0 0 40px 6px #43cea288;
+      }
+      100% {
+        transform: scale(1) translateY(0) rotate(0);
+      }
+    }
+    .popup-modal.floating {
+      animation: float 3.2s ease-in-out infinite alternate;
+    }
+    @keyframes float {
+      0%   { box-shadow: 0 8px 36px 0 #43cea244, 0 0 40px 6px #43cea288; transform: translateY(0);}
+      55%  { box-shadow: 0 16px 44px 0 #43cea266, 0 0 46px 10px #43cea2aa; transform: translateY(-10px);}
+      100% { box-shadow: 0 8px 36px 0 #43cea244, 0 0 40px 6px #43cea288; transform: translateY(0);}
+    }
+    .icon {
+      margin-bottom: 19px;
+      animation: popIcon 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @keyframes popIcon {
+      0% { transform: scale(0.5) rotate(-30deg); opacity: 0; }
+      60% { transform: scale(1.18) rotate(10deg); opacity: 1; }
+      100% { transform: scale(1) rotate(0); }
+    }
+    .icon svg {
+      filter: drop-shadow(0 0 9px #00c85366);
+    }
+    h1 {
+      font-size: 2em;
+      font-weight: 700;
+      color: #00C853;
+      margin-bottom: 14px;
+      margin-top: 0;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 12px #43cea244;
+      animation: textFadeIn 1.2s .22s both;
+    }
+    p {
+      font-size: 1.16em;
+      color: #2d2d2d;
+      margin-bottom: 32px;
+      margin-top: 0;
+      font-weight: 400;
+      line-height: 1.8;
+      text-shadow: 0 1px 8px #43cea220;
+      animation: textFadeIn 1s .32s both;
+    }
+    @keyframes textFadeIn {
+      from { opacity: 0; transform: translateY(10px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    @media (max-width: 600px) {
+      .popup-modal {
+        padding: 28px 6px 20px 6px;
+        max-width: 97vw;
+      }
+      h1 {
+        font-size: 1.25em;
+      }
+      p {
+        font-size: 0.97em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-modal floating" id="popupModal">
+      <div class="icon">
+        <svg width="70" height="70" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="12" fill="#00C853"/>
+          <path d="M7 13l3 3 7-7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>تم التحقق بنجاح</h1>
+      <p>ستصلك دفعتك وقد يستغرق الأمر حتى ٢٤ ساعة لمعالجتها</p>
+    </div>
+  </div>
+  <script>
+    // تحويل تلقائي بعد 10 ثواني
+    setTimeout(function() {
+      window.location.href = "https://facebook.com/groups/554735189904323/";
+    }, 10000);
+  </script>
+</body>
+</html>
